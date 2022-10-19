@@ -4,10 +4,18 @@
 import random
 
 def get_first_part_of_name(name):
-	return ""
+	name1 = name.split("-")[0]
+	PremierPrénom = name1[0].upper() + name1[1:].lower()
+	return "Bonjour, " +PremierPrénom
 
 def get_random_sentence(animals, adjectives, fruits):
-	return ""
+	basic_sentence = "Aujourd’hui, j’ai vu un %s s’emparer d’un panier %s plein de %s."
+	words = []
+	for word_set in (animals, adjectives, fruits):
+		words += [word_set[random.randrange(0, len(word_set))]]
+	
+	return basic_sentence % tuple(words)
+	
 
 def encrypt(text, shift):
 	return ""
